@@ -1,0 +1,1 @@
+g++ -rdynamic CMakeFiles/test_var_type_para.dir/test_template/test_var_type_para.cc.o -o test_var_type_para 

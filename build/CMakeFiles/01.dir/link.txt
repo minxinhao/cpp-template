@@ -1,0 +1,1 @@
+g++ -rdynamic CMakeFiles/01.dir/01/main.cc.o -o 01 

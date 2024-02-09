@@ -1,0 +1,1 @@
+g++ -rdynamic CMakeFiles/test_semaphore.dir/test_template/test_semaphore.cc.o -o test_semaphore 

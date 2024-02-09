@@ -1,0 +1,1 @@
+g++ -rdynamic CMakeFiles/test_forward.dir/test_template/test_forward.cc.o -o test_forward 

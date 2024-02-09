@@ -1,0 +1,1 @@
+g++ -rdynamic CMakeFiles/test_err.dir/test_template/test_err.cc.o -o test_err 

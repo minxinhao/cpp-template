@@ -1,0 +1,1 @@
+g++ -rdynamic CMakeFiles/test_type_traits.dir/test_template/test_type_traits.cc.o -o test_type_traits 

@@ -1,0 +1,15 @@
+/home/mxh/homework/build/CMakeFiles/01.dir
+/home/mxh/homework/build/CMakeFiles/test_combine.dir
+/home/mxh/homework/build/CMakeFiles/test_err.dir
+/home/mxh/homework/build/CMakeFiles/test_exchange.dir
+/home/mxh/homework/build/CMakeFiles/test_forward.dir
+/home/mxh/homework/build/CMakeFiles/test_index_sequence.dir
+/home/mxh/homework/build/CMakeFiles/test_osync_stream.dir
+/home/mxh/homework/build/CMakeFiles/test_recursive.dir
+/home/mxh/homework/build/CMakeFiles/test_reference.dir
+/home/mxh/homework/build/CMakeFiles/test_rov.dir
+/home/mxh/homework/build/CMakeFiles/test_semaphore.dir
+/home/mxh/homework/build/CMakeFiles/test_type_traits.dir
+/home/mxh/homework/build/CMakeFiles/test_var_type_para.dir
+/home/mxh/homework/build/CMakeFiles/edit_cache.dir
+/home/mxh/homework/build/CMakeFiles/rebuild_cache.dir
