@@ -1,4 +1,5 @@
 /home/mxh/homework/build/CMakeFiles/01.dir
+/home/mxh/homework/build/CMakeFiles/02.dir
 /home/mxh/homework/build/CMakeFiles/test_combine.dir
 /home/mxh/homework/build/CMakeFiles/test_err.dir
 /home/mxh/homework/build/CMakeFiles/test_exchange.dir

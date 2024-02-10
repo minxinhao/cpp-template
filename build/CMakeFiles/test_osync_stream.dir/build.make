@@ -73,15 +73,15 @@ CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.o: CMakeFile
 CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.o: ../test_template/test_osync_stream.cc
 CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.o: CMakeFiles/test_osync_stream.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.o -MF CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.o.d -o CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.o -c /home/mxh/homework/test_template/test_osync_stream.cc
+	g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.o -MF CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.o.d -o CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.o -c /home/mxh/homework/test_template/test_osync_stream.cc
 
 CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mxh/homework/test_template/test_osync_stream.cc > CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.i
+	g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mxh/homework/test_template/test_osync_stream.cc > CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.i
 
 CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mxh/homework/test_template/test_osync_stream.cc -o CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.s
+	g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mxh/homework/test_template/test_osync_stream.cc -o CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.s
 
 # Object files for target test_osync_stream
 test_osync_stream_OBJECTS = \

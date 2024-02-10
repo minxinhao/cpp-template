@@ -73,15 +73,15 @@ CMakeFiles/01.dir/01/main.cc.o: CMakeFiles/01.dir/flags.make
 CMakeFiles/01.dir/01/main.cc.o: ../01/main.cc
 CMakeFiles/01.dir/01/main.cc.o: CMakeFiles/01.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/01.dir/01/main.cc.o"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/01.dir/01/main.cc.o -MF CMakeFiles/01.dir/01/main.cc.o.d -o CMakeFiles/01.dir/01/main.cc.o -c /home/mxh/homework/01/main.cc
+	g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/01.dir/01/main.cc.o -MF CMakeFiles/01.dir/01/main.cc.o.d -o CMakeFiles/01.dir/01/main.cc.o -c /home/mxh/homework/01/main.cc
 
 CMakeFiles/01.dir/01/main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/01.dir/01/main.cc.i"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mxh/homework/01/main.cc > CMakeFiles/01.dir/01/main.cc.i
+	g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mxh/homework/01/main.cc > CMakeFiles/01.dir/01/main.cc.i
 
 CMakeFiles/01.dir/01/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/01.dir/01/main.cc.s"
-	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mxh/homework/01/main.cc -o CMakeFiles/01.dir/01/main.cc.s
+	g++-11 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mxh/homework/01/main.cc -o CMakeFiles/01.dir/01/main.cc.s
 
 # Object files for target 01
 01_OBJECTS = \

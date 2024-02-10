@@ -130,6 +130,19 @@ depend:
 .PHONY : 01/fast
 
 #=============================================================================
+# Target rules for targets named 02
+
+# Build rule for target.
+02: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 02
+.PHONY : 02
+
+# fast build rule for target.
+02/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/02.dir/build.make CMakeFiles/02.dir/build
+.PHONY : 02/fast
+
+#=============================================================================
 # Target rules for targets named test_combine
 
 # Build rule for target.
@@ -308,6 +321,30 @@ test_var_type_para/fast:
 01/main.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/01.dir/build.make CMakeFiles/01.dir/01/main.cc.s
 .PHONY : 01/main.cc.s
+
+02/main.o: 02/main.cc.o
+.PHONY : 02/main.o
+
+# target to build an object file
+02/main.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/02.dir/build.make CMakeFiles/02.dir/02/main.cc.o
+.PHONY : 02/main.cc.o
+
+02/main.i: 02/main.cc.i
+.PHONY : 02/main.i
+
+# target to preprocess a source file
+02/main.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/02.dir/build.make CMakeFiles/02.dir/02/main.cc.i
+.PHONY : 02/main.cc.i
+
+02/main.s: 02/main.cc.s
+.PHONY : 02/main.s
+
+# target to generate assembly for a file
+02/main.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/02.dir/build.make CMakeFiles/02.dir/02/main.cc.s
+.PHONY : 02/main.cc.s
 
 test_template/test_combine.o: test_template/test_combine.cc.o
 .PHONY : test_template/test_combine.o
@@ -606,6 +643,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... 01"
+	@echo "... 02"
 	@echo "... test_combine"
 	@echo "... test_err"
 	@echo "... test_exchange"
@@ -621,6 +659,9 @@ help:
 	@echo "... 01/main.o"
 	@echo "... 01/main.i"
 	@echo "... 01/main.s"
+	@echo "... 02/main.o"
+	@echo "... 02/main.i"
+	@echo "... 02/main.s"
 	@echo "... test_template/test_combine.o"
 	@echo "... test_template/test_combine.i"
 	@echo "... test_template/test_combine.s"

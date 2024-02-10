@@ -2,8 +2,7 @@
 #include <iostream>
 template <typename T, typename F> T operator|(T &&t, F &&f)
 {
-    for (auto &i : t)
-        f(i);
+    std::ranges::for_each(t, f);
     return t;
 }
 

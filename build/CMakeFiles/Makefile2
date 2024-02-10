@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/mxh/homework/build
 
 # The main recursive "all" target.
 all: CMakeFiles/01.dir/all
+all: CMakeFiles/02.dir/all
 all: CMakeFiles/test_combine.dir/all
 all: CMakeFiles/test_err.dir/all
 all: CMakeFiles/test_exchange.dir/all
@@ -84,6 +85,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/01.dir/clean
+clean: CMakeFiles/02.dir/clean
 clean: CMakeFiles/test_combine.dir/clean
 clean: CMakeFiles/test_err.dir/clean
 clean: CMakeFiles/test_exchange.dir/clean
@@ -125,13 +127,39 @@ CMakeFiles/01.dir/clean:
 .PHONY : CMakeFiles/01.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/02.dir
+
+# All Build rule for target.
+CMakeFiles/02.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/02.dir/build.make CMakeFiles/02.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/02.dir/build.make CMakeFiles/02.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=3,4 "Built target 02"
+.PHONY : CMakeFiles/02.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/02.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mxh/homework/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/02.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mxh/homework/build/CMakeFiles 0
+.PHONY : CMakeFiles/02.dir/rule
+
+# Convenience name for target.
+02: CMakeFiles/02.dir/rule
+.PHONY : 02
+
+# clean rule for target.
+CMakeFiles/02.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/02.dir/build.make CMakeFiles/02.dir/clean
+.PHONY : CMakeFiles/02.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/test_combine.dir
 
 # All Build rule for target.
 CMakeFiles/test_combine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_combine.dir/build.make CMakeFiles/test_combine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_combine.dir/build.make CMakeFiles/test_combine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=3,4 "Built target test_combine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=5,6 "Built target test_combine"
 .PHONY : CMakeFiles/test_combine.dir/all
 
 # Build rule for subdir invocation for target.
@@ -157,7 +185,7 @@ CMakeFiles/test_combine.dir/clean:
 CMakeFiles/test_err.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_err.dir/build.make CMakeFiles/test_err.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_err.dir/build.make CMakeFiles/test_err.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=5,6 "Built target test_err"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=7,8 "Built target test_err"
 .PHONY : CMakeFiles/test_err.dir/all
 
 # Build rule for subdir invocation for target.
@@ -183,7 +211,7 @@ CMakeFiles/test_err.dir/clean:
 CMakeFiles/test_exchange.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_exchange.dir/build.make CMakeFiles/test_exchange.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_exchange.dir/build.make CMakeFiles/test_exchange.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=7,8 "Built target test_exchange"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=9,10 "Built target test_exchange"
 .PHONY : CMakeFiles/test_exchange.dir/all
 
 # Build rule for subdir invocation for target.
@@ -209,7 +237,7 @@ CMakeFiles/test_exchange.dir/clean:
 CMakeFiles/test_forward.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_forward.dir/build.make CMakeFiles/test_forward.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_forward.dir/build.make CMakeFiles/test_forward.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=9,10 "Built target test_forward"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=11,12 "Built target test_forward"
 .PHONY : CMakeFiles/test_forward.dir/all
 
 # Build rule for subdir invocation for target.
@@ -235,7 +263,7 @@ CMakeFiles/test_forward.dir/clean:
 CMakeFiles/test_index_sequence.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_index_sequence.dir/build.make CMakeFiles/test_index_sequence.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_index_sequence.dir/build.make CMakeFiles/test_index_sequence.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=11,12 "Built target test_index_sequence"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=13,14 "Built target test_index_sequence"
 .PHONY : CMakeFiles/test_index_sequence.dir/all
 
 # Build rule for subdir invocation for target.
@@ -261,7 +289,7 @@ CMakeFiles/test_index_sequence.dir/clean:
 CMakeFiles/test_osync_stream.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_osync_stream.dir/build.make CMakeFiles/test_osync_stream.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_osync_stream.dir/build.make CMakeFiles/test_osync_stream.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=13,14 "Built target test_osync_stream"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=15,16 "Built target test_osync_stream"
 .PHONY : CMakeFiles/test_osync_stream.dir/all
 
 # Build rule for subdir invocation for target.
@@ -287,7 +315,7 @@ CMakeFiles/test_osync_stream.dir/clean:
 CMakeFiles/test_recursive.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_recursive.dir/build.make CMakeFiles/test_recursive.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_recursive.dir/build.make CMakeFiles/test_recursive.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=15,16 "Built target test_recursive"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=17,18 "Built target test_recursive"
 .PHONY : CMakeFiles/test_recursive.dir/all
 
 # Build rule for subdir invocation for target.
@@ -313,7 +341,7 @@ CMakeFiles/test_recursive.dir/clean:
 CMakeFiles/test_reference.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_reference.dir/build.make CMakeFiles/test_reference.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_reference.dir/build.make CMakeFiles/test_reference.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=17,18 "Built target test_reference"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=19,20 "Built target test_reference"
 .PHONY : CMakeFiles/test_reference.dir/all
 
 # Build rule for subdir invocation for target.
@@ -339,7 +367,7 @@ CMakeFiles/test_reference.dir/clean:
 CMakeFiles/test_rov.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rov.dir/build.make CMakeFiles/test_rov.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rov.dir/build.make CMakeFiles/test_rov.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=19,20 "Built target test_rov"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=21,22 "Built target test_rov"
 .PHONY : CMakeFiles/test_rov.dir/all
 
 # Build rule for subdir invocation for target.
@@ -365,7 +393,7 @@ CMakeFiles/test_rov.dir/clean:
 CMakeFiles/test_semaphore.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_semaphore.dir/build.make CMakeFiles/test_semaphore.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_semaphore.dir/build.make CMakeFiles/test_semaphore.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=21,22 "Built target test_semaphore"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=23,24 "Built target test_semaphore"
 .PHONY : CMakeFiles/test_semaphore.dir/all
 
 # Build rule for subdir invocation for target.
@@ -391,7 +419,7 @@ CMakeFiles/test_semaphore.dir/clean:
 CMakeFiles/test_type_traits.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_type_traits.dir/build.make CMakeFiles/test_type_traits.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_type_traits.dir/build.make CMakeFiles/test_type_traits.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=23,24 "Built target test_type_traits"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=25,26 "Built target test_type_traits"
 .PHONY : CMakeFiles/test_type_traits.dir/all
 
 # Build rule for subdir invocation for target.
@@ -417,7 +445,7 @@ CMakeFiles/test_type_traits.dir/clean:
 CMakeFiles/test_var_type_para.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_var_type_para.dir/build.make CMakeFiles/test_var_type_para.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_var_type_para.dir/build.make CMakeFiles/test_var_type_para.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=25,26 "Built target test_var_type_para"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mxh/homework/build/CMakeFiles --progress-num=27,28 "Built target test_var_type_para"
 .PHONY : CMakeFiles/test_var_type_para.dir/all
 
 # Build rule for subdir invocation for target.
