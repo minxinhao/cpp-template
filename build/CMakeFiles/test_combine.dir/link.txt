@@ -1,1 +1,0 @@
-g++-11 -rdynamic CMakeFiles/test_combine.dir/test_template/test_combine.cc.o -o test_combine 

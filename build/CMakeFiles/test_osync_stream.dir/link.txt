@@ -1,1 +1,0 @@
-g++-11 -rdynamic CMakeFiles/test_osync_stream.dir/test_template/test_osync_stream.cc.o -o test_osync_stream 

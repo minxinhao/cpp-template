@@ -1,1 +1,0 @@
-g++-11 -rdynamic CMakeFiles/test_reference.dir/test_template/test_reference.cc.o -o test_reference 

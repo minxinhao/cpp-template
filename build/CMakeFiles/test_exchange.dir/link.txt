@@ -1,1 +1,0 @@
-g++-11 -rdynamic CMakeFiles/test_exchange.dir/test_template/test_exchange.cc.o -o test_exchange 
