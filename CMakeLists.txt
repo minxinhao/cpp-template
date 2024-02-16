@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 project(MyProject CXX)
 
 # 设置编译器为g++
-set(CMAKE_CXX_COMPILER g++-11)
+set(CMAKE_CXX_COMPILER g++)
 
 # 设置C++标准为C++20
 set(CMAKE_CXX_STANDARD 20)
