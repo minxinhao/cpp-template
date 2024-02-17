@@ -1,6 +1,5 @@
-# *
+*/
 
-build/
 data
 !.gitignore
 
@@ -9,7 +8,7 @@ data
 !.vscode
 
 #  保留以 01、03、...、111 命名的数字文件夹
-![0-9][0-9]/*
+![0-9][0-9]
 
 # 保留 test_template 文件夹
 !test_template/
