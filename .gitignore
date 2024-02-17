@@ -1,1 +1,18 @@
 build/
+
+
+# 保留 include 文件夹
+!include/
+!.vscode
+
+#  保留以 01、03、...、111 命名的数字文件夹
+![0-9]*
+
+# 保留 test_template 文件夹
+!test_template/
+
+# 保留 CMakeList.txt 文件
+!CMakeList.txt
+
+# 保留 gitcommit.sh 文件
+!git_commit.sh
