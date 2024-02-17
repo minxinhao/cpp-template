@@ -41,6 +41,7 @@ struct scope_guard_2
         std::apply(f, values);
     }
     scope_guard_2(const scope_guard_2 &) = delete;
+    scope_guard_2(scope_guard_2 &&) = delete;
 };
 
 template <typename F, typename... Args> // 推导指引非常重要

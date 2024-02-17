@@ -1,0 +1,1 @@
+g++  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_index_sequence.dir/test_index_sequence.cc.o -o test_index_sequence 

@@ -37,8 +37,8 @@ int main()
                 fp = nullptr;
                 std::cout << "guard" << std::endl;
             };
-            // auto guard = scope_guard<decltype(lamda)>(lamda);
-            auto guard = scope_guard_1(lamda);
+            auto guard = scope_guard<decltype(lamda)>(lamda);
+            // auto guard = scope_guard_1(lamda);
 
             throw std::runtime_error{"Test"};
         }
@@ -71,8 +71,8 @@ int main()
             }
         } t;
         // auto guard = scope_guard(t);
-        // scope_guard<decltype(t)> guard(t);
-        scope_guard_1 guard(t);
+        scope_guard<decltype(t)> guard(t);
+        // scope_guard_1 guard(t);
         // Test &tt = t;
         // auto guard_2 = scope_guard(tt);
     }
@@ -87,8 +87,8 @@ int main()
             }
         } t;
         auto x = new X{};
-        // auto guard = scope_guard<decltype(t), decltype(x)>(t, x);
-        auto guard = scope_guard_1(t, x);
+        auto guard = scope_guard<decltype(t), decltype(x)>(t, x);
+        // auto guard = scope_guard_1(t, x);
     }
     puts("----------");
     {
@@ -103,8 +103,8 @@ int main()
                     px = nullptr;
                 }
             } t;
-            // auto guard = scope_guard<decltype(&Test::f), decltype(&t), decltype(std::ref(x))>{&Test::f, &t, std::ref(x)};
-            auto guard = scope_guard_1{&Test::f, &t, std::ref(x)};
+            auto guard = scope_guard<decltype(&Test::f), decltype(&t), decltype(std::ref(x))>{&Test::f, &t, std::ref(x)};
+            // auto guard = scope_guard_1{&Test::f, &t, std::ref(x)};
         }
         assert(x == nullptr);
     }
