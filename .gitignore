@@ -1,5 +1,4 @@
-build/
-
+*
 
 # 保留 include 文件夹
 !include/
