@@ -8,7 +8,7 @@ struct MyStruct {
 };
 
 int main() {
-    std::cout << "Member count: " << std::tuple_size<MyStruct>::value << std::endl;
+    // std::cout << "Member count: " << std::tuple_size<MyStruct>::value << std::endl;
     
     return 0;
 }
