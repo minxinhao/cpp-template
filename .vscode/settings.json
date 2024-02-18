@@ -77,6 +77,11 @@
         "stop_token": "cpp",
         "syncstream": "cpp",
         "cinttypes": "cpp",
-        "cassert": "cpp"
+        "cassert": "cpp",
+        "__tree": "cpp",
+        "csignal": "cpp",
+        "fstream": "cpp",
+        "map": "cpp",
+        "set": "cpp"
     }
 }
