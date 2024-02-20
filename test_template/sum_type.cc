@@ -132,7 +132,7 @@ auto transform(std::optional<T> what, FTR &&function_T_to_R) -> std::optional<st
     if (!what.has_value())
         return std::nullopt;
     // return what; // you'll want an optional<R> here... declval, decltype anyone?
-    return std::invoke(std::forward<FTR>(function_T_to_R), std::move(what.value()));
+    return std::invoke(function_T_to_R, std::move(what.value()));
 };
 } // namespace functor
 
