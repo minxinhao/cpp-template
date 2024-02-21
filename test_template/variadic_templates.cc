@@ -2,6 +2,7 @@
 #include "dbg.h"
 #include "docktest.h"
 #include <string>
+#include <type_traits>
 #include <vector>
 
 // TODO: alter a function template to return the number of arguments passed.
@@ -90,7 +91,12 @@ TEST_CASE("tuples, DISABLED_i_can_transform_all_elements_of_a_tuple")
 namespace
 {
 
-template <typename... Ts> std::string serialize(const Ts &...ts)
+template <typename T, typename... Ts> std::string serialize(const T &t, const Ts... rest)
+{
+    return serialize(t) + ", " + serialize(rest...);
+}
+
+std::string serialize()
 {
     return "";
 }
@@ -103,11 +109,6 @@ template <> std::string serialize(const int &ts)
 template <> std::string serialize(const std::string &ts)
 {
     return "string@'" + ts + "'";
-}
-
-template <typename T, typename... Ts> std::string serialize(const T &t, const Ts... rest)
-{
-    return serialize(t) + "," + serialize(rest...);
 }
 
 } // namespace
@@ -128,45 +129,45 @@ TEST_CASE("serialization, DISABLED_serialize_different_types")
 // HINT: the base case is a single vector
 // GRADE: INTERMEDIATE
 
-template <typename T> std::vector<T> flatten(std::vector<T> t1)
+template <typename T> std::vector<T> &flatten(std::vector<T> &t1)
 {
-    dbg("4");
     return t1;
 }
 
-template <typename T> std::vector<T> flatten(std::vector<T> t1, T t2)
+template <typename T> std::vector<T> &flatten(std::vector<T> &t1, T t2)
 {
-    dbg("3");
     t1.push_back(t2);
     return t1;
 }
 
-template <typename T> std::vector<T> flatten(std::vector<T> t1, std::vector<T> t2)
+template <typename T> std::vector<T> &flatten(std::vector<T> &t1, std::vector<T> &t2)
 {
-    dbg("2");
     t1.insert(t1.end(), t2.begin(), t2.end());
     return t1;
 }
 
 template <typename T, typename T2, typename... Ts> std::vector<T> flatten(std::vector<T> t, T2 t2, Ts... ts)
 {
-    dbg("1");
     return flatten(flatten(t, t2), ts...);
 }
 TEST_CASE("variadic_monad, DISABLED_flatten_operation")
 {
-    // flatten(std::vector<int>{},1);
-    flatten(std::vector<int>{}, 1, 1);
-    // CHECK_EQ((std::vector<int>{1, 2, 3, 4, 5}), (flatten(std::vector<int>({1}), 2, std::vector<int>{3, 4, 5})));
+    CHECK_EQ((std::vector<int>{1, 2, 3, 4, 5}), (flatten(std::vector<int>({1}), 2, std::vector<int>{3, 4, 5})));
 }
 
 // TODO: adapt `contained_by` to return a callable
 // representing a predicate for presence in a compile-time list
 // HINT: contained_by()( anything ) will return false.
 // GRADE: INTERMEDIATE
-template <typename... Ts> auto contained_by(Ts &&...ts)
+
+template <typename T, typename... Ts>
+auto contained_by(T &&t, Ts &&...ts)
+    requires(std::is_same_v<T, Ts> && ...)
 {
-    return [](auto x) { return false; };
+    return [&](auto x) {
+        std::vector<T> data{t, ts...};
+        return (std::find(data.begin(), data.end(), x) != data.end());
+    };
 }
 
 TEST_CASE("variadic_templates, DISABLED_create_a_compile_time_list_lookup")
@@ -176,9 +177,16 @@ TEST_CASE("variadic_templates, DISABLED_create_a_compile_time_list_lookup")
     CHECK_FALSE(in_list(0));
 }
 
-template <typename F, typename A, typename T, typename... Ts> auto accumulate(F f, A a, T t, Ts... ts)
+// Termination condition specialization
+template <typename F, typename A> auto accumulate(F f, A a)
 {
     return a;
+}
+
+template <typename F, typename A, typename T, typename... Ts> auto accumulate(F f, A a, T t, Ts... ts)
+{
+    // return accumulate(f(a, t), ts...);
+    return f(a, accumulate(f, t, ts...));
 }
 
 TEST_CASE("variable_templates, DISABLED_we_can_accumulate")
@@ -191,9 +199,13 @@ TEST_CASE("variable_templates, DISABLED_we_can_accumulate")
     CHECK_EQ(10, accumulate(std::plus<>(), 0, 1, 2, 3, 4));
 }
 
-template <typename F, typename T> auto transform(F f, T t)
+template <typename F, typename... Args>
+    requires(std::invocable<F, Args> && ...)
+auto transform(F f, std::tuple<Args...> t)
 {
-    return t;
+    auto trans_w_f = [&](auto... val) { return std::make_tuple(std::invoke(f, val)...); };
+
+    return std::apply(trans_w_f, t);
 };
 
 TEST_CASE("variadic_tuple_iteration, DISABLED_we_can_transform_an_indexed_tuple")
@@ -213,7 +225,6 @@ TEST_CASE("variadic_tuple_iteration, DISABLED_we_can_transform_an_indexed_tuple"
     const auto result = transform(f, input);
     CHECK_EQ(2, std::get<0>(result));
     CHECK_EQ(3, std::get<1>(result));
-    // EXPECT_NEAR(4.5, std::get<2>(result), .0001);
     REQUIRE_EQ(4.5, doctest::Approx(std::get<2>(result)));
 }
 
@@ -237,7 +248,7 @@ auto transaction(Account &from, Account &to, Amount amount)
 
 // TODO:
 // uncomment next line
-// #define I_CAN_WRAP_FUNCTIONS
+#define I_CAN_WRAP_FUNCTIONS
 //
 // And now...
 //
@@ -260,6 +271,12 @@ auto transaction(Account &from, Account &to, Amount amount)
 #ifdef I_CAN_WRAP_FUNCTIONS
 template <typename M, typename F> auto writer(M m, F f)
 {
+    return [m, f](std::string &log,
+                  auto &&...args) -> std::tuple<std::string, decltype(f(std::forward<decltype(args)>(args)...))> {
+        // m is a message echoed to log
+        auto value = f(std::forward<decltype(args)>(args)...);
+        return {log + m, value};
+    };
 }
 #endif
 
@@ -292,7 +309,14 @@ TEST_CASE("variadic_templates, DISABLED_can_be_used_to_wrap_existing_functions")
 #endif
 }
 
-auto tabulate = [](auto... functions) { return [](auto... arguments) { return std::string{"not implemented"}; }; };
+template <typename... Functions> auto tabulate(Functions... funcs)
+{
+    return [=](auto... input) {
+        std::string result;
+        auto rowf = [&input...](auto f) { return ((std::to_string(f(input)) + ",") + ...); };
+        return "(" + ((rowf(funcs) + ", ") + ...) + +")";
+    };
+}
 
 TEST_CASE("composition, DISABLED_print_a_matrix")
 {
@@ -303,14 +327,16 @@ TEST_CASE("composition, DISABLED_print_a_matrix")
     // of the functions applied to the arguments
     // GOAL: learn to deal with multiple packs and expansions
     // GRADE: HARD
+    tabulate([](auto i) { return i; })(1, 2, 3);
     const auto table =
         tabulate([](auto i) { return i; }, [](auto i) { return i * i; }, [](auto i) { return i * i * i - 1; })(1, 2, 3);
+    dbg(table);
     CHECK_EQ(R"(1, 2, 3
-1, 4, 9
-0, 7, 26)",
+    1, 4, 9
+    0, 7, 26)",
              table);
 
     CHECK_EQ(R"(1, 4, 9, 100
-1, 8, 27, 1000)",
+    1, 8, 27, 1000)",
              tabulate([](auto i) { return i * i; }, [](auto i) { return i * i * i; })(1, 2, 3, 10));
 }
