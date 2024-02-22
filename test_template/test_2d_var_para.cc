@@ -3,18 +3,6 @@
 #include <string>
 #include <vector>
 
-template <typename... Funcs> auto tabulate(Funcs... funcs)
-{
-    return [=](int start, int end, int step = 1) {
-        std::ostringstream oss;
-        for (int i = start; i <= end; i += step)
-        {
-            ((oss << funcs(i)), ...);
-            oss << '\n';
-        }
-        return oss.str();
-    };
-}
 
 auto product = [](auto... fs) {
     return [&](auto... is) {
