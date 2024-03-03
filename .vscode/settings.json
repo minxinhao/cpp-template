@@ -84,6 +84,7 @@
         "map": "cpp",
         "set": "cpp",
         "span": "cpp",
-        "future": "cpp"
+        "future": "cpp",
+        "coroutine": "cpp"
     }
 }
